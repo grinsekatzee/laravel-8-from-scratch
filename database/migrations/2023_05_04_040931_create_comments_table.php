@@ -17,9 +17,10 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->text('body');
+
+            $table->foreign('post-id')->references('id')->on('posts')->cascadeOnDelete();
         });
     }
-
     /**
      * Reverse the migrations.
      */
